@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@layer base {
+    body {
+        @apply bg-stone-50 text-stone-900 font-sans antialiased;
+        /* Dot Grid Background - PatternCraft inspired */
+        background-color: #fafaf9;
+        /* stone-50 */
+        background-image: radial-gradient(#44403c 1px, transparent 1px);
+        background-size: 24px 24px;
+        background-position: 0 0;
+        opacity: 1;
+    }
+
+    /* Minimal Scrollbar */
+    ::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+        @apply bg-transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        @apply bg-stone-300 rounded-full;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        @apply bg-stone-400;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-semibold tracking-tight text-stone-900;
+    }
+
+    p {
+        @apply leading-relaxed text-stone-600;
+    }
+
+    code,
+    pre,
+    kbd {
+        @apply font-mono;
+    }
+}
+
+@layer utilities {
+    .animate-fade-in {
+        animation: fade-in 300ms ease-out;
+    }
+
+    .glass-panel {
+        @apply bg-white border border-stone-200 shadow-sm backdrop-blur-sm;
+    }
+
+    .iso-card {
+        @apply bg-white border border-stone-200 p-6 transition-all duration-200 hover:border-stone-400 hover:shadow-sm;
+    }
+
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
