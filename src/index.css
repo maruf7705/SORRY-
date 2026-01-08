@@ -6,13 +6,19 @@
 @layer base {
     body {
         @apply bg-stone-50 text-stone-900 font-sans antialiased;
-        /* Dot Grid Background - PatternCraft inspired */
+        /* Grid Background (Box) */
         background-color: #fafaf9;
         /* stone-50 */
-        background-image: radial-gradient(#44403c 1px, transparent 1px);
-        background-size: 24px 24px;
+        background-image:
+            linear-gradient(#e7e5e4 1px, transparent 1px),
+            linear-gradient(90deg, #e7e5e4 1px, transparent 1px);
+        background-size: 40px 40px;
         background-position: 0 0;
         opacity: 1;
+
+        /* Prevent body scroll if content fits, but allow if overflow */
+        height: 100vh;
+        overflow: hidden;
     }
 
     /* Minimal Scrollbar */

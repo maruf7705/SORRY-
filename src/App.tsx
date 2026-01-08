@@ -9,9 +9,9 @@ import ProgressDashboard from './components/ProgressDashboard'
 function App() {
     return (
         <Router>
-            <div className="min-h-screen flex flex-col items-center py-12 px-4 sm:px-6 lg:px-8">
+            <div className="h-screen w-full flex flex-col items-center justify-center p-6 overflow-hidden relative">
                 {/* Minimal Header */}
-                <header className="w-full max-w-2xl mb-12 flex justify-between items-center">
+                <header className="absolute top-8 w-full max-w-4xl flex justify-between items-center px-4">
                     <a href="/" className="text-sm font-bold tracking-tight uppercase hover:text-stone-600 transition-colors">
                         Focus Protocol
                     </a>
@@ -20,7 +20,7 @@ function App() {
                     </div>
                 </header>
 
-                <main className="w-full max-w-2xl">
+                <main className="w-full max-w-5xl flex-1 flex flex-col justify-center">
                     <Routes>
                         <Route path="/" element={<FocusHome />} />
                         <Route path="/protocol-a" element={<ProtocolA />} />
@@ -32,7 +32,7 @@ function App() {
                     </Routes>
                 </main>
 
-                <footer className="mt-24 text-stone-400 text-xs font-mono w-full max-w-2xl flex justify-between">
+                <footer className="absolute bottom-6 text-stone-400 text-[10px] font-mono w-full max-w-4xl flex justify-between px-4">
                     <span>V 0.1.0</span>
                     <span>DESIGN BY PATTERNCRAFT</span>
                 </footer>
